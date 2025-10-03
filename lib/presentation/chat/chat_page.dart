@@ -35,7 +35,12 @@ class _ChatPageState extends State<ChatPage> {
           },
           color: Colors.black,
         ),
-        actions: [AvatarContainer(url: agent.imageUrl)],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: AvatarContainer(url: agent.imageUrl),
+          ),
+        ],
       ),
       body: Visibility(
         visible: cubit.state.isInitialized,

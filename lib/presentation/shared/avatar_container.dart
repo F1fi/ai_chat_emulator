@@ -11,38 +11,29 @@ class AvatarContainer extends StatelessWidget {
     final placeholder = Container(
       height: 40,
       width: 40,
-      margin: EdgeInsets.only(right: 16),
+      // margin: EdgeInsets.only(right: 16),
       decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
     );
 
-    return Container(
-      height: 40,
-      width: 40,
-      margin: EdgeInsets.only(right: 16),
-      decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
-      child: CachedNetworkImage(
-        imageUrl: url,
-        imageBuilder:
-            (context, imageProvider) => Container(
-              height: 40,
-              width: 40,
-              margin: EdgeInsets.only(right: 16),
-              decoration: BoxDecoration(
-                color: Colors.black,
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: imageProvider,
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.red,
-                    BlendMode.colorBurn,
-                  ),
-                ),
+    return CachedNetworkImage(
+      imageUrl: url,
+      imageBuilder:
+          (context, imageProvider) => Container(
+            height: 40,
+            width: 40,
+            // margin: EdgeInsets.only(right: 16),
+            decoration: BoxDecoration(
+              color: Colors.black,
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: imageProvider,
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(Colors.red, BlendMode.colorBurn),
               ),
             ),
-        placeholder: (context, url) => placeholder,
-        errorWidget: (context, _, __) => placeholder,
-      ),
+          ),
+      placeholder: (context, url) => placeholder,
+      errorWidget: (context, _, __) => placeholder,
     );
   }
 }
