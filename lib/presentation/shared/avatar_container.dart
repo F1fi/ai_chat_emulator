@@ -11,7 +11,6 @@ class AvatarContainer extends StatelessWidget {
     final placeholder = Container(
       height: 40,
       width: 40,
-      // margin: EdgeInsets.only(right: 16),
       decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
     );
 
@@ -21,7 +20,6 @@ class AvatarContainer extends StatelessWidget {
           (context, imageProvider) => Container(
             height: 40,
             width: 40,
-            // margin: EdgeInsets.only(right: 16),
             decoration: BoxDecoration(
               color: Colors.black,
               shape: BoxShape.circle,
